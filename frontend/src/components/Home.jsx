@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import axios from 'axios';
 
 const Home = () => {
   const [isLogin, setIsLogin] = useState(true)
@@ -16,7 +17,7 @@ const Home = () => {
     const Signupdata = { username, password };
 
     try{
-      const response = await axios.post('http://localhost:5000/api/signup', Signupdata);
+      const response = await axios.post('http://localhost:8000/signup', Signupdata);
       console.log('Signup successful:', response.data);
     }
     catch (error) {

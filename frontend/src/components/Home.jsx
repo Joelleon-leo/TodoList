@@ -15,7 +15,7 @@ const Home = () => {
 
     try {
     const response = await axios.post(
-      "http://localhost:8000/login",
+      "https://taskflow-2-9gnf.onrender.com/login",
       Logindata
     );
     navigate("/todolist/" + response.data.user_id);
@@ -29,7 +29,7 @@ const Home = () => {
     const Signupdata = { username, password };
 
     try{
-      const response = await axios.post('http://localhost:8000/signup', Signupdata);
+      const response = await axios.post('https://taskflow-2-9gnf.onrender.com/signup', Signupdata);
       console.log('Signup successful:', response.data);
       // switch to login view so user can log in
       setIsLogin(true);

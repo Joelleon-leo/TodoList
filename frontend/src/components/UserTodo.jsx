@@ -19,7 +19,7 @@ const UserTodo = () => {
         }
 
         const response = await axios.get(
-          `http://localhost:8000/tasks/${userId}`
+          `https://taskflow-2-9gnf.onrender.com/tasks/${userId}`
         );
 
         const data = Array.isArray(response.data)
@@ -47,7 +47,7 @@ const UserTodo = () => {
 
     try {
       const resp = await axios.post(
-        `http://localhost:8000/tasks/${userId}`,
+        `https://taskflow-2-9gnf.onrender.com/tasks/${userId}`,
         { description: input }
       );
 
@@ -66,7 +66,7 @@ const UserTodo = () => {
   //  Delete task
   const handleDelete = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/tasks/${userId}/${id}`);
+      await axios.delete(`https://taskflow-2-9gnf.onrender.com/tasks/${userId}/${id}`);
 
       setTasks((prev) => prev.filter((task) => task.id !== id));
     } catch (err) {
